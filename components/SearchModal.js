@@ -37,6 +37,8 @@ const SearchModal = ({open}) => {
         className='w-2/3 mx-auto text-gray-600 px-4 py-2 my-2 rounded-lg outline-none'
         value={text}
         onChange={(e) => handleChange(e)}
+        placeholder='search an account'
+        autoFocus
       />
       <ul>
         {suggestions.map((user) => (
