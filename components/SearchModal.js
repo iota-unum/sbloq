@@ -1,10 +1,12 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { getSuggestions } from '../helpers/getSuggestions';
-
-const SearchModal = () => {
+import SuggestedAccount from './SuggestedAccount';
+import useStore from '../store';
+const SearchModal = ({open}) => {
   const [text, setText] = useState('');
   const [suggestions, setSuggestions] = useState([]);
+ 
   useEffect(() => {
     const fetchSuggestions = async () => {
       try {
@@ -29,16 +31,21 @@ const SearchModal = () => {
   };
 
   return (
-    <div className='bg-blue-500 w-full h-full flex flex-col '>
+  open &&  <div className='bg-blue-500 w-full h-full flex flex-col '>
       <input
         type='text'
-        className='w-2/3 mx-auto text-5xl text-gray-600 px-4 py-1 my-2 rounded-lg outline-none'
+        className='w-2/3 mx-auto text-gray-600 px-4 py-2 my-2 rounded-lg outline-none'
         value={text}
         onChange={(e) => handleChange(e)}
       />
       <ul>
         {suggestions.map((user) => (
-          <li key={user.id}>{user.name}</li>
+
+          <SuggestedAccount key={user.id} user={user} />
+          // <li key={user.id}>{user.name}</li>
+
+
+
         ))}
       </ul>
     </div>

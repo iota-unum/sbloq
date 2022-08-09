@@ -11,9 +11,9 @@ export default function Home() {
 
  
   return (
-    <div className='text-emerald-300 h-screen bg-emerald-600 flex justify-center flex-col text-7xl w-full md:w-1/2 mx-auto'>
+    <div className='text-emerald-300 h-screen text-sm bg-emerald-600 flex justify-center flex-col w-full md:w-1/2 mx-auto'>
       {/* <h1>Next-Tailwind</h1> */}
-      <SearchModal />
+      <SearchModal open={true}/>
     </div>
   );
 }
