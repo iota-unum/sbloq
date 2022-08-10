@@ -31,7 +31,7 @@ const SearchModal = ({open}) => {
   };
 
   return (
-  open &&  <div className='bg-blue-500 w-full h-full flex flex-col '>
+  open &&  <div className='bg-blue-500 w-full overflow-clip h-screen flex flex-col '>
       <input
         type='text'
         className='w-2/3 mx-auto text-gray-600 px-4 py-2 my-2 rounded-lg outline-none'
